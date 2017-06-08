@@ -1,0 +1,24 @@
+# Installed library versions
+* * *
+Please don't make any changes here. Content is being auto generated every 24h.
+* * *
+
+Name | Value
+---------- | ----------
+__Hostname__   | {{ hostname }}
+__Server Address__   | {{ server_address }}
+__Username__   | {{ username }}
+__OS Release__ | {{ os_release }}
+__Django version__ | {{ django_version }}
+__Postgres version__ | {{ postgres_version }}
+__Python version__ | {{ python_versions.python2|default("") }} {{ python_versions.python3|default("") }}
+
+## Application python dependencies
+
+Library Name | Version
+---------- | ----------{% for dep in python_dependencies %}
+__{{ dep.0 }}__ | {{ dep.1 }}{% endfor %}
+
+* * *
+
+[<< Back to index]({{ link_base }}droplet-library-versions-index "Back to index") | Data published: {{ now }}
