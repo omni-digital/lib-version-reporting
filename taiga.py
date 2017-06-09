@@ -54,7 +54,7 @@ class TaigaWiki(object):
 
         return {
             'Authorization': 'Bearer {0}'.format(response.json()['auth_token']),
-            'x-disable-pagination': True
+            'x-disable-pagination': '1',
         }
 
     def _get_settings(self):
