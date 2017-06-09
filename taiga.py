@@ -140,6 +140,7 @@ class TaigaWiki(object):
         pages = [i for i in pages if not i.endswith(config_slug)]
         pages = [(i, '{0}@{1}'.format(i.split('--')[1], i.split('--')[2].replace('_', '.'))) for i in pages]
         pages = [(i[0], settings.get(i[1], i[1])) for i in pages]
+        pages = sorted(pages, key=lambda x: x[0])
 
         self._submit_page('templates/index.html', {
             'config_slug': config_slug,
