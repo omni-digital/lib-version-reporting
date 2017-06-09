@@ -68,14 +68,14 @@ class StatsGather(object):
             mark = 'Description:'
             for line in self.run('lsb_release -a')[0].split(self.newline):
                 if line.startswith(mark):
-                    return line.replace(mark, '').replace('\n', '').strip()
+                    return line.replace(mark, '').strip()
         except OSError:
             pass
 
         # If centos
 
         try:
-            return self.run('cat /etc/centos-release')[0]
+            return self.run('cat /etc/centos-release')[0].replace('\n', '').strip()
         except OSError:
             pass
 
