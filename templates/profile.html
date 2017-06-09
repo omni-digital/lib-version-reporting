@@ -11,7 +11,7 @@ __Username__   | {{ username }}
 __OS Release__ | {{ os_release }}
 __Django version__ | {{ django_version }}
 __Postgres version__ | {{ postgres_version }}
-__Python version__ | {{ python_versions.python2|default("") }} {{ python_versions.python3|default("") }}
+__Python version__ | {% if python_versions.python2 %}{{ python_versions.python2|default("") }} {% endif %}{% if python_versions.python3%}{{ python_versions.python3|default("") }}{% endif %}
 
 ## Application python dependencies
 
