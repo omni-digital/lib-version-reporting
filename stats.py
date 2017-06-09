@@ -68,7 +68,7 @@ class StatsGather(object):
             mark = 'Description:'
             for line in self.run('lsb_release -a')[0].split(self.newline):
                 if line.startswith(mark):
-                    return line.replace(mark, '').strip()
+                    return line.replace(mark, '').replace('\n', '').strip()
         except OSError:
             pass
 
