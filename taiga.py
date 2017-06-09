@@ -7,8 +7,11 @@ import json
 from jinja2 import Template
 
 # Silence ugly SSL warnings in centos + python2 environments.
-import urllib3
-urllib3.disable_warnings()
+try:
+    import urllib3
+    urllib3.disable_warnings()
+except ImportError:
+    pass
 
 
 class TaigaWiki(object):
