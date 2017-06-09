@@ -94,7 +94,7 @@ class StatsGather(object):
         items = []
         for item in data.split(self.newline):
             parts = item.split('==')
-            if parts != ['']:
+            if len(parts) > 1:
                 items.append((parts[0].strip().lower(), parts[1]))
 
         return items
