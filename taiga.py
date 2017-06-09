@@ -150,19 +150,6 @@ class TaigaWiki(object):
         Create service profile wiki page
         :param data: StatsGather instance
         """
-        print({
-            'link_base': self.link_base,
-            'username': data.username,
-            'hostname': data.hostname,
-            'server_address': data.server_address,
-            'now': self.now,
-            'os_release': data.os_release,
-            'python_dependencies': data.python_dependencies,
-            'django_version': data.django_version,
-            'python_versions': data.python_versions,
-            'postgres_version': data.postgres_version,
-        })
-
         slug_part = '-{0}--{1}'.format(data.username, data.server_address.replace('.', '_'))
         self._submit_page('templates/profile.html', {
             'link_base': self.link_base,
