@@ -53,7 +53,7 @@ class TaigaWiki(object):
             })
 
         return {
-            'Authorization': 'Bearer {0}'.format(response.json()['auth_token'])
+            'Authorization': 'Bearer {0}'.format(response.json()['auth_token']),
             'x-disable-pagination': True
         }
 
